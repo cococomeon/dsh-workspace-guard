@@ -1,0 +1,12 @@
+packages:
+  - .
+
+# Same shape as the DSH web profile this plugin is linked into: one flat
+# node_modules, and no peer resolution — the SDK peers (@deepseek-ai/dsh*,
+# @deepseek-ai/cordis, @deepseek-ai/schemastery) are supplied by DSH at load
+# time and must NEVER be installed here. A local copy would shadow the loader's
+# mapped singleton, giving the plugin a second cordis/tools instance.
+nodeLinker: hoisted
+autoInstallPeers: false
+allowBuilds:
+  esbuild: true
